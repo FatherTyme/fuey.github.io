@@ -89,7 +89,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="java,java核心技术," />
+  <meta name="keywords" content="nginx," />
 
 
 
@@ -105,16 +105,19 @@
 
 
 
-<meta name="description" content="java,java核心技术">
+<meta name="description" content="上星期，由于工作需要，要搭建一个nginx服务器用于公司业务系统的反向代理，大概了解了一下，就动手搭建了一下，顺便出一个教程，方便新(zi)手(ji)查阅">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java核心技术--第一、二章">
-<meta property="og:url" content="http://yoursite.com/2017/03/27/technology/book/javaImpTech1/javaImpTech_1/index.html">
+<meta property="og:title" content="单节点Nginx环境搭建">
+<meta property="og:url" content="http://yoursite.com/2017/04/16/technology/nginx/单节点nginx环境搭建/index.html">
 <meta property="og:site_name" content="一个Javaer的手札">
-<meta property="og:description" content="java,java核心技术">
-<meta property="og:updated_time" content="2017-03-27T15:03:55.901Z">
+<meta property="og:description" content="上星期，由于工作需要，要搭建一个nginx服务器用于公司业务系统的反向代理，大概了解了一下，就动手搭建了一下，顺便出一个教程，方便新(zi)手(ji)查阅">
+<meta property="og:image" content="http://i1.piimg.com/591560/4716d3856ba6e9f4.png">
+<meta property="og:image" content="http://i1.piimg.com/591560/af24b8e898055aed.png">
+<meta property="og:updated_time" content="2017-04-16T16:07:00.996Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java核心技术--第一、二章">
-<meta name="twitter:description" content="java,java核心技术">
+<meta name="twitter:title" content="单节点Nginx环境搭建">
+<meta name="twitter:description" content="上星期，由于工作需要，要搭建一个nginx服务器用于公司业务系统的反向代理，大概了解了一下，就动手搭建了一下，顺便出一个教程，方便新(zi)手(ji)查阅">
+<meta name="twitter:image" content="http://i1.piimg.com/591560/4716d3856ba6e9f4.png">
 
 
 
@@ -142,13 +145,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/27/technology/book/javaImpTech1/javaImpTech_1/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/16/technology/nginx/单节点nginx环境搭建/"/>
 
 
 
 
 
-  <title> Java核心技术--第一、二章 | 一个Javaer的手札 </title>
+  <title> 单节点Nginx环境搭建 | 一个Javaer的手札 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -339,7 +342,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/27/technology/book/javaImpTech1/javaImpTech_1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/16/technology/nginx/单节点nginx环境搭建/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="luyuanxing">
@@ -360,7 +363,7 @@
             
             
               
-                Java核心技术--第一、二章
+                单节点Nginx环境搭建
               
             
           </h1>
@@ -375,8 +378,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-27T23:03:55+08:00">
-                2017-03-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-16T23:46:00+08:00">
+                2017-04-16
               </time>
             
 
@@ -398,8 +401,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java核心技术/" itemprop="url" rel="index">
-                    <span itemprop="name">java核心技术</span>
+                  <a href="/categories/nginx/" itemprop="url" rel="index">
+                    <span itemprop="name">nginx</span>
                   </a>
                 </span>
 
@@ -422,7 +425,7 @@
                    <i class="fa fa-calendar-o"></i>
                  </span>
                  <span class="post-meta-item-text">字数统计:</span>
-                 <span class="post-count">6(字)</span>
+                 <span class="post-count">524(字)</span>
                  
                </span>
           
@@ -432,7 +435,7 @@
                    <i class="fa fa-calendar-o"></i>
                  </span>
                  <span class="post-meta-item-text">阅读时长:</span>
-                 <span class="post-count">1(分)</span>
+                 <span class="post-count">2(分)</span>
            
          </span>
 
@@ -453,7 +456,26 @@
       
 
       
-        <p>java,java核心技术</p>
+        <p>　　上星期，由于工作需要，要搭建一个nginx服务器用于公司业务系统的反向代理，大概了解了一下，就动手搭建了一下，顺便出一个教程，方便新(zi)手(ji)查阅<a id="more"></a></p>
+<h4 id="一、安装Nginx"><a href="#一、安装Nginx" class="headerlink" title="一、安装Nginx"></a>一、安装Nginx</h4><ol>
+<li>点击<a href="https://nginx.org/en/download.html" target="_blank" rel="external">这里</a>，下载安装最新版本Nginx,并解压安装包：<code>tar -zxvf nginx-xxxx.tar.gz</code></li>
+<li>安装Nginx编译必须的lib包，pcre、zlib和OpenSSL：<br> <code>yum -y install pcre-devel</code><br> <code>yum install openssl openssl-devel</code><br> <code>yum install -y zlib-devel</code></li>
+<li>检查Nginx必须的lib是否已经有了：<code>./configure --with-http_ssl_module</code>，若出现以下内容则表示lib已经安装<br><img src="http://i1.piimg.com/591560/4716d3856ba6e9f4.png" alt="xx"></li>
+<li>定位到nginx目录，运行<code>make</code>命令进行编译，然后切换到root权限，到nginx目录执行<code>make install</code>命令进行安装</li>
+<li>定位到安装路径下：<code>/usr/local/nginx/sbin</code>，运行命令<code>./nginx</code>，在浏览器中输入阿里云的host地址，如果出现下图类似内容，则安装成功<br><img src="http://i1.piimg.com/591560/af24b8e898055aed.png" alt="xx"></li>
+</ol>
+<h3 id="二、配置nginx配置文件"><a href="#二、配置nginx配置文件" class="headerlink" title="二、配置nginx配置文件"></a>二、配置nginx配置文件</h3><ol>
+<li>将证书和key放在<em>/usr/local/nginx/conf</em>目录下，下面备用</li>
+<li>打开并下载路径<em>/usr/local/nginx/conf</em>下的<strong><em>nginx.conf</em></strong>文件：<br>　　1. 将<strong><em>worker_processes</em></strong>(允许生成的进程数)、<strong><em>worker_connections </em></strong>(最大连接数)设置大点<br>　　2. 配置代理服务器，在此均使用单节点的方式进行:<pre><code><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">upstream myappServer&#123;</div><div class="line">	server localhost:8001;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre></li>
+</ol>
+<p>以此类推，配置多个系统<br>　　3. 配置server模块：<br>        <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">client_max_body_size 500M;   --上传文件限制大小</div><div class="line">listen       80 default backlog=2048; --监听端口</div><div class="line">listen 443 ssl; --ssl加密传输接口</div><div class="line">server_name  localhost; </div><div class="line">ssl_certificate      /usr/local/nginx/conf/server.crt; --ssl证书</div><div class="line">ssl_certificate_key  /usr/local/nginx/conf/server.key; --ssl key</div><div class="line"></div><div class="line">proxy_set_header       Host $host;  --主域名</div><div class="line">proxy_set_header  X-Real-IP  $remote_addr; --真实地址</div><div class="line">proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;</div><div class="line">proxy_set_header X-Forwarded-Proto  $scheme;</div></pre></td></tr></table></figure></p>
+<pre><code>4. 匹配规则：
+    <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">location /myapp/ &#123;   --匹配规则为*/mychs/*的地址请求</div><div class="line">	proxy_pass http://mychsServer/myapp/; -- mychsServer对应上面的myServer</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><ol>
+<li>保存，定位到<strong><em>sbin</em></strong>目录下,运行命令<code>./nginx -s reload</code>即可重新加载nginx配置文件</li>
+</ol>
+<h3 id="常用命令："><a href="#常用命令：" class="headerlink" title="常用命令："></a>常用命令：</h3><p>启动 Nginx：<code>sudo ./sbin/nginx</code><br>停止 Nginx：<code>sudo ./sbin/nginx -s stop</code>或<code>sudo ./sbin/nginx -s quit</code><br>Nginx 重载配置: <code>sudo ./sbin/nginx -s reload</code><br>查看配置文件是否正确: <code>./sbin/nginx –t</code><br>强制停止: <code>pkill -9 nginx</code></p>
 
       
     </div>
@@ -477,9 +499,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag"># java</a>
-          
-            <a href="/tags/java核心技术/" rel="tag"># java核心技术</a>
+            <a href="/tags/nginx/" rel="tag"># nginx</a>
           
         </div>
       
@@ -501,10 +521,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/16/technology/nginx/单节点nginx环境搭建/" rel="prev" title="单节点Nginx环境搭建">
-                单节点Nginx环境搭建 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -556,8 +572,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -572,7 +597,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -581,7 +606,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -590,7 +615,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -615,6 +640,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、安装Nginx"><span class="nav-number">1.</span> <span class="nav-text">一、安装Nginx</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、配置nginx配置文件"><span class="nav-number"></span> <span class="nav-text">二、配置nginx配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令："><span class="nav-number"></span> <span class="nav-text">常用命令：</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
