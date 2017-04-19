@@ -112,7 +112,9 @@
 <meta property="og:site_name" content="一个Javaer的手札">
 <meta property="og:description" content="写在前面　　提起软考，都是泪啊，这算是第三次考了，第一、二次考试都是在大学的时候考的，第一次下午题差３分，差点没把我气吐血，第二次由于没咋看书，简直惨不忍睹，刚毕业出来，学校的一些知识还没忘光，还是打算把这证给考了，爷就不信了．．．．话不多说，开始作死模式．．．">
 <meta property="og:image" content="http://i2.muimg.com/591560/2356ce58761bd50b.png">
-<meta property="og:updated_time" content="2017-04-18T15:45:52.987Z">
+<meta property="og:image" content="http://i4.buimg.com/591560/dbebe915d26826d2.png">
+<meta property="og:image" content="http://i2.muimg.com/591560/1be830fa4d71f3dd.png">
+<meta property="og:updated_time" content="2017-04-19T15:22:00.155Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第 2 章 计算机组成原理与体系结构">
 <meta name="twitter:description" content="写在前面　　提起软考，都是泪啊，这算是第三次考了，第一、二次考试都是在大学的时候考的，第一次下午题差３分，差点没把我气吐血，第二次由于没咋看书，简直惨不忍睹，刚毕业出来，学校的一些知识还没忘光，还是打算把这证给考了，爷就不信了．．．．话不多说，开始作死模式．．．">
@@ -424,7 +426,7 @@
                    <i class="fa fa-calendar-o"></i>
                  </span>
                  <span class="post-meta-item-text">字数统计:</span>
-                 <span class="post-count">374(字)</span>
+                 <span class="post-count">659(字)</span>
                  
                </span>
           
@@ -434,7 +436,7 @@
                    <i class="fa fa-calendar-o"></i>
                  </span>
                  <span class="post-meta-item-text">阅读时长:</span>
-                 <span class="post-count">1(分)</span>
+                 <span class="post-count">2(分)</span>
            
          </span>
 
@@ -464,7 +466,7 @@
 <li>原码：把一个数转为二进制，并把最高位设为符号位，不足七位用0补全，即，1的原码为0000 0001，-1为1000 0001</li>
 <li>反码：整数的原码与反码相同，负数的原码除符号位外，其他位按位取反，即，1的反码为0000 0001，-1为1111 1110</li>
 <li>补码：整数的补码与反码相同，负数为反码+1,即，1的补码为0000 0001，-1为1111 1111</li>
-<li>移码：补码的符号位取反，即，1的补码为1000 0001，-1为0111 1111，通常用来表示浮点数的阶码<h3 id="数值表示范围"><a href="#数值表示范围" class="headerlink" title="数值表示范围"></a>数值表示范围</h3><img src="http://i2.muimg.com/591560/2356ce58761bd50b.png" alt="范围"></li>
+<li>移码：补码的符号位取反，即，1的补码为1000 0001，-1为0111 1111，通常用来表示浮点数的阶码<h3 id="数值表示范围"><a href="#数值表示范围" class="headerlink" title="数值表示范围"></a>数值表示范围</h3>由于补码的+0和-0相同，所以比原码和反码多一位<br><img src="http://i2.muimg.com/591560/2356ce58761bd50b.png" alt="范围"><h3 id="浮点数表示"><a href="#浮点数表示" class="headerlink" title="浮点数表示"></a>浮点数表示</h3>浮点数是指通过科学记数法表示的数，通常，表示为N=M<em>R^e,则M为尾数，e为指数，R为基数<br>浮点数之间的运算，通常要经过对阶-&gt;尾数计算-&gt;结果格式化的过程,对价时，通常由低向高对价，比如：2.34</em>10^5 + 1.04<em>10^6<br>对阶后：0.234</em>10^6 + 1.04<em>10^6 = 1.274</em>10^6<br>其中，结果格式化表示尾数的第一位必须为不为零且之后必须为小数点(即不能为0.11或11.2)<h2 id="计算机结构"><a href="#计算机结构" class="headerlink" title="计算机结构"></a>计算机结构</h2><h3 id="硬件组成"><a href="#硬件组成" class="headerlink" title="硬件组成"></a>硬件组成</h3>计算机由cpu（运算器，控制器）、存储器、输入设备、输出设备组成<br>运算器：算术逻辑单元（ALU），累加寄存器（AC）、数据缓冲寄存器（DR）、状态条件寄存器（PSW）<br>控制器：程序计数器（PC）、指令寄存器（IR）、指令译码器、时序部件<h3 id="计算机体系结构分类"><a href="#计算机体系结构分类" class="headerlink" title="计算机体系结构分类"></a>计算机体系结构分类</h3><img src="http://i4.buimg.com/591560/dbebe915d26826d2.png" alt="flynn分类法"><h3 id="CISC和RISC"><a href="#CISC和RISC" class="headerlink" title="CISC和RISC"></a>CISC和RISC</h3>CISC:复杂指令集计算机(提高效率)<br>RISC:精简指令集计算机（提高性能）<br><img src="http://i2.muimg.com/591560/1be830fa4d71f3dd.png" alt="CISC和RISC"></li>
 </ul>
 
       
@@ -642,7 +644,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据的表示"><span class="nav-number">2.</span> <span class="nav-text">数据的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进制转化"><span class="nav-number">2.1.</span> <span class="nav-text">进制转化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#码制"><span class="nav-number">2.2.</span> <span class="nav-text">码制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数值表示范围"><span class="nav-number">2.3.</span> <span class="nav-text">数值表示范围</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据的表示"><span class="nav-number">2.</span> <span class="nav-text">数据的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进制转化"><span class="nav-number">2.1.</span> <span class="nav-text">进制转化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#码制"><span class="nav-number">2.2.</span> <span class="nav-text">码制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数值表示范围"><span class="nav-number">2.3.</span> <span class="nav-text">数值表示范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数表示"><span class="nav-number">2.4.</span> <span class="nav-text">浮点数表示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机结构"><span class="nav-number">3.</span> <span class="nav-text">计算机结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#硬件组成"><span class="nav-number">3.1.</span> <span class="nav-text">硬件组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机体系结构分类"><span class="nav-number">3.2.</span> <span class="nav-text">计算机体系结构分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CISC和RISC"><span class="nav-number">3.3.</span> <span class="nav-text">CISC和RISC</span></a></li></ol></li></ol></div>
             
 
           </div>
